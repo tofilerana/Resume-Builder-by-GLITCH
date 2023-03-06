@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Content -->
+
+<br />
+<center>
+  <h2>Dashboard</h2>
+  <a class="btn btn-primary" href="{% url 'form' %}">
+    <h3>Create Resume</h3>
+  </a>
+</center>
+<hr />
+<center>
+  <!-- <a class="btn btn-secondary col-4" href="">Template1</a> -->
+  <table class="col-8 table">
+    <tr>
+      <th class="col-4">Name</th>
+      <th class="col-2">PDF Action</th>
+      <th class="col-2">QR Action</th>
+      <th class="col-2">Edit Action</th>
+      <th class="col-2">Delete Action</th>
+    </tr>
+    {% for list in form %}
+    <tr>
+      <td><a href="#" class="btn btn-secondary">{{list.id}}</a></td>
+      <td><a href="{% url 'detailedView' list.id %}" class="btn btn-primary ">PDF Templates</a></td>
+      <td><a href="{% url 'qr' %}" class="btn btn-primary ">Generate QR </a></td>
+      <td><a href="{% url 'formUpdate' list.id %}" class="btn btn-primary ">Edit</a></td>
+      <td><a href="{% url 'delData' list.id %}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+  </table>
+  <hr>
+</center>
+
+<!-- Content -->
+{% endblock %}

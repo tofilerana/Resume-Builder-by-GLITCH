@@ -1,0 +1,65 @@
+ <!-- NavBar -->
+ <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-button"
+    style="height:80px;background-color:#37434d;color:#ffffff;">
+
+    <div class="container-fluid">
+       <a class="navbar-brand" href="#">
+          <i class="fa fa-globe">
+          </i>&nbsp;QR
+          Resume</a>
+       <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+          <span class="visually-hidden">Toggle
+             navigation</span>
+          <span class="navbar-toggler-icon">
+
+          </span>
+       </button>
+       <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="navbar-nav ms-auto">
+             {% if user.is_authenticated %}
+             <li class="nav-item">
+                <a class="nav-link " style="color:#ffffff;" href="{% url 'dashboard' user.id %}">
+                   <i class="fa fa-home">
+
+                   </i>&nbsp;Home</a></li>
+
+
+             <li class="nav-item">
+                <a class="nav-link " style="color:#ffffff;" href="{% url 'form' %}">
+                   <i class="fa fa-wpexplorer">
+                   </i>&nbsp;Form
+                </a>
+             </li>
+             <li class="nav-item">
+                <a href="{% url 'dashboard' user.id %}" class="nav-link " style="color:#ffffff;">
+                   <i class="fa fa-star-o"></i>&nbsp;Dashboard</a></li>
+             <!-- <li class="nav-item"><a class="nav-link " style="color:#ffffff;" href="#">
+                   <i class="fa fa-user-circle-o">
+                   </i>&nbsp;API</a>
+             </li> -->
+             <li class="nav-item">
+                <a class="nav-link " style="color:#ffffff;" href="{% url 'logout' %}">
+                   <i class="fa fa-sign-in">
+                   </i>&nbsp;Logout
+                </a>
+             </li>
+             {% else %}
+             <li class="nav-item">
+                <a class="nav-link " style="color:#ffffff;" href="{% url 'index' %}">
+                   <i class="fa fa-home">
+
+                   </i>&nbsp;Home</a></li>
+             <li class="nav-item">
+                <a href="{% url 'login' %}" class="nav-link " style="color:#ffffff;">
+                   <i class="fa fa-star-o"></i>&nbsp;Login</a></li>
+             <!-- <li class="nav-item"><a class="nav-link " style="color:#ffffff;" href="#">
+                   <i class="fa fa-user-circle-o"></i>&nbsp;API</a></li> -->
+             <li class="nav-item">
+                <a class="nav-link " style="color:#ffffff;" href="{% url 'signup' %}">
+                   <i class="fa fa-sign-in"></i>&nbsp;Signup</a></li>
+             {% endif %}
+          </ul>
+       </div>
+    </div>
+ </nav>
+ <!-- NavBar -->

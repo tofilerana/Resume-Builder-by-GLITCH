@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<br><br><br>
+<table class="table">
+ <tr>
+  <td>
+   {% for list in form %}
+   <a href="{% url 'click'  list.id %}" class="btn btn-primary ">Load the Template</a>
+   {% endfor %}
+  </td>
+ </tr>
+ <tr>
+  <td><a href="{% url 'myview' %}" class="btn btn-primary ">Template 1 PDF</a> <a href="{% url 'myview'  %}"
+    class="btn btn-warning ">Template 2 PDF</a></td>
+ </tr>
+</table>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'assets/css/style1.scss' %}">
+</head>
+
+<body style="background: #ff9; padding: 20px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+  <!-- Person, Objective, Projects,       Skills, Location, Regards  -->
+  {% for list in form %}
+  <!-- <a href="{% url 'myview' %}" class="btn btn-primary "></a> -->
+  <p>
+
+    {{list.first_name}}
+    {{list.last_name}}
+  </p>
+  <hr>
+  Email: {{user.email}}
+  <hr>
+  Phone: 111-222-3333
+  <br />
+  Objective
+  {{list.objective}}
+  <br />
+  Projects
+  {{list.projects}}
+  <br />
+  Skills
+  {{list.skills}}
+  <br />
+  Location
+  {{list.location}}
+  <br />
+  Regards
+  {{Regards}}
+  <br />
+  {% endfor %}
+  <!-- <button onclick="window.print()">Print this page</button> -->
+</body>
+
+</html>

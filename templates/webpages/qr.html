@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+  <div class="container shadow" style="width: 800px; margin-top: 5em; padding: 2em">
+    <form method="post">
+      {% csrf_token %}
+      <!-- <h3>Enter any text to generate a QR code</h3> -->
+      <div class="input-group mb-3">
+        <!-- <span class="input-group-text" id="inputGroup-sizing-default">QR Code Text:</span> -->
+        <input class="form-control" type="hidden" value="http://127.0.0.1:8000/pdfConverter/myview"
+          aria-describedby="inputGroup-sizing-default" name="qr_text" autofocus>
+      </div>
+      <div class="input-group mb-3">
+        <input type="submit" value="Click here to view" style="max-width: 200px; margin: auto" class="form-control">
+      </div>
+    </form>
+    <div class="input-group mb-3">
+      <div style="margin: auto">
+        {{ svg|safe }}
+      </div>
+    </div>
+  </div>
+</body>
+
+{% endblock %}

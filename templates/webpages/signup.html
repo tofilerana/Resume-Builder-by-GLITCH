@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post" action="{% url 'signup' %}">
+   {% csrf_token %}
+   <div class="form-group">
+      <label for="exampleInputEmail1">User Name</label>
+      <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+   </div>
+   <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+   </div>
+   <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+   </div>
+   <div class="form-group">
+      <label for="exampleInputPassword1">Confirm Password</label>
+      <input name="confirmpassword" type="password" class="form-control" id="exampleInputPassword1">
+   </div>
+
+
+   <button type="submit" class="btn btn-primary">Submit</button>
+   <small id="emailHelp" class="form-text text-muted">Already
+      have Account? Login <a href="{% url 'login' %}">
+         here</a></small>
+</form>
+{% endblock %}

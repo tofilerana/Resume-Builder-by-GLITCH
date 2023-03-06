@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br>
+<div style="top: 50px;">
+ <form method="post" action="{% url 'form' %}">
+  {% csrf_token %}
+  <div class="form-group">
+   <input name="userId" type="hidden" value="{{user.id}}" class="form-control">
+
+  </div>
+  <div class="form-group">
+   <label>First Name</label>
+   <input name="firstname" type="text" class="form-control" value="{{Form.first_name}}">
+
+  </div>
+  <div class="form-group">
+   <label>Last Name</label>
+   <input name="lastname" type="text" class="form-control" value="{{Form.last_name}}">
+
+  </div>
+  <div class="form-group">
+   <label>Objective</label>
+   <input name="objective" type="text" class="form-control" value="{{Form.objective}}">
+
+  </div>
+  <div class="form-group">
+   <label>Project</label>
+   <input name="projects" type="text" class="form-control" value="{{Form.projects}}">
+
+  </div>
+  <div class="form-group">
+   <label>Skills</label>
+   <input name="skills" type="text" class="form-control" value="{{Form.skills}}">
+
+  </div>
+  <div class="form-group">
+   <label>location</label>
+   <input name="location" type="text" class="form-control" value="{{Form.location}}">
+
+  </div>
+
+  <div class="form-group">
+   <label>Regards</label>
+   <input name="regards" type="text" class="form-control" value="{{Form.regards}}">
+  </div>
+  <div class="form-group">
+
+   <label>Select Template</label>
+   <select name="resumes" value="{{Form.tempdata}}" class="form-select" aria-label="Default select example">
+    <option selected disabled hidden>select template</option>
+    <option value="template1">template1</option>
+    <option value="template2">template2</option>
+   </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+</div>
+<br>
+
+{% endblock %}
