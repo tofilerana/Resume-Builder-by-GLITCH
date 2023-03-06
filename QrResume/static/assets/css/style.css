@@ -1,0 +1,10 @@
+body {
+ background: rgb(232, 232, 232);
+}
+
+form {
+ width: 350px;
+ position: relative;
+ /* top: 300px; */
+ left: 300px;
+}
